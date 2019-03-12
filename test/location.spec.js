@@ -166,7 +166,7 @@ describe('Location tests "/locations"', () => {
 
 		it('should not delete non existing', done => {
 			request(server)
-				.del(`/locations/53cb6b9b4f4ddef1ad47f943`)
+				.del(`/locations/53cb6b9b4f4ddef1ad47f9543`)
 				.end((err, res) => {
 					expect(res.statusCode).to.equal(404);
 					expect(res.body.message).to.eq('Location not found', done());

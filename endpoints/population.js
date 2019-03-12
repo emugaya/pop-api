@@ -161,8 +161,8 @@ var formatLocation = function location(location){
 var _deleteLocation = function deleteLoc(req, res, next){
 	let locationId = req.params.id;
 	Location.remove({_id: locationId}, (error, deletedLoc) => {
-		if(error){
-			return next(new restifyErrors.InternalError('An error occurred deleting location'));
+		if(error || !deletedLoc){
+			return next(new restifyErrors.NotFoundError('Location not found'));
 		}
 
 		if(deletedLoc){

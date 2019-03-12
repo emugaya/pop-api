@@ -44,13 +44,6 @@ const LocationSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-  // Before Saving, get total for both male and female
-  LocationSchema.pre('save', next => {
-    let location = this;
-    this.total = location.male + location.female;
-    next();
-  });
-
   //Model 
   let Location = mongoose.model('Location', LocationSchema);
 
