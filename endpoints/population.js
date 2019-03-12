@@ -1,5 +1,4 @@
 'use strict';
-var restify = require('restify');
 var restifyErrors = require('restify-errors');
 var Location = require('../models/location');
 

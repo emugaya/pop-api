@@ -35,11 +35,6 @@ const LocationSchema = new mongoose.Schema({
     required: false,
     default: null
   },
-  total: {
-    type: Number,
-    required: false,
-    default: 0
-  },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
 });
