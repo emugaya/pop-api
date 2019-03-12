@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/emugaya/pop-api.svg?style=svg)](https://circleci.com/gh/emugaya/pop-api)
 [![Maintainability](https://api.codeclimate.com/v1/badges/63b4ff2de26fdabafbcc/maintainability)](https://codeclimate.com/github/emugaya/pop-api/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/63b4ff2de26fdabafbcc/test_coverage)](https://codeclimate.com/github/emugaya/pop-api/test_coverage)
 # Population Management API
