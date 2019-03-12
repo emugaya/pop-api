@@ -68,7 +68,7 @@ describe('Location tests "/locations"', () => {
 				.post('/locations')
 				.send(childLocationTwo)
 				.end((err, res) => {
-					expect(res).to.have.status(400);
+					expect(res.statusCode).to.equal(400);
 					expect(res.body.message).to.eq('An error occured saving location. Make sure all required params are passed', done());
 				});
 		});
@@ -128,7 +128,7 @@ describe('Location tests "/locations"', () => {
 				.put(`/locations/${location._id}`)
 				.send({male: 12, female: 13, parent: 'loc-parent'})
 				.end((err, res) => {
-					expect(res).to.have.status(400);
+					expect(res.statusCode).to.equal(400);
 					expect(res.body.message).to.eq('Updatng location parent is not allowed. First delete it and create a new one.', done());
 				});
 		});
@@ -167,7 +167,7 @@ describe('Location tests "/locations"', () => {
 		it('should not delete non existing', done => {
 			request(server)
 				.del(`/locations/53cb6b9b4f4ddef1ad47f943`)
-				.end((res) => {
+				.end((err, res) => {
 					expect(res.statusCode).to.equal(404);
 					expect(res.body.message).to.eq('Location not found', done());
 				});
