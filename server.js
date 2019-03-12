@@ -5,7 +5,7 @@ var corsMiddleware = require('restify-cors-middleware');
 require('./models/db').Database;
 
 const cors = corsMiddleware({
-    origins: ['*'], // TO DO: Must be changed to allow only production, test, dev, and staging environments
+    origins: ['*'],
     allowHeaders: ['Access-Control-Allow-Origin', 'API-Token', 'authorization', 'encrypt'],
     exposeHeaders: ['API-Token-Expiry']
 });
@@ -29,12 +29,12 @@ server.pre(function(req, res, next) {
 
 // ERROR HANDLERS
 server.on('BadRequest', function (req, res, err, cb) {
-  // console.log(err);
+  console.log(err);
   return cb();
 });
 //Uncaught exception handling
 server.on('uncaughtException', (req, res, route, err) => {
-  // console.log(err);
+  console.log(err);
   res.send(500, "Internal Server Error");
 });
 
